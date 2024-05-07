@@ -8,5 +8,13 @@
     "start": "nodemon index.js"
   },
   "author": "Prakhar Trivedi",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "fs": "^0.0.1-security",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.9.7",
+    "path": "^0.12.7",
+    "sequelize": "^6.37.3"
+  }
 }
