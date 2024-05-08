@@ -8,14 +8,13 @@
 <body>
     <h1>Todo List App</h1>
     <button onclick="createTodo()">Create Todo</button>
-    <button onclick="deleteTodo()">Delete Todo</button>
 
     <% locals.data.forEach((item) => { %>
         <p>ID: <%= item.id %></p>
         <p>Title: <%= item.title %></p>
         <p>Description: <%= item.description %></p>
         <p>Completed: <%= item.done %></p>
-        <a href="/toggleDone/<%= item.id %>">Toggle Done</a>
+        <a href="/toggleDone/<%= item.id %>">Toggle Done</a>&nbsp;&nbsp;&nbsp;<a href="/delete/<%= item.id %>">Delete Todo</a>
         <hr>
     <% }) %>
 

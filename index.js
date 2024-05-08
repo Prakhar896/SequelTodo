@@ -56,6 +56,23 @@ app.get('/toggleDone/:id', async (req, res) => {
     res.redirect('/')
 })
 
+app.get('/delete/:id', async (req, res) => {
+    var id = req.params.id;
+    if (!id) {
+        res.send("ID not provided.")
+        return
+    }
+
+    const targetTodo = await Todo.findByPk(id)
+    if (!targetTodo) {
+        res.send("Todo not found.")
+        return
+    }
+
+    await targetTodo.destroy()
+    res.redirect('/')
+})
+
 db.sequelize.sync().then((req) => {
     app.listen(8000, () => {
         console.log("Server started running.")
